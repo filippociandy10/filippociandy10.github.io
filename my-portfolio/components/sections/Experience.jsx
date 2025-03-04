@@ -9,58 +9,61 @@ const Experience = () => {
   
   const experienceData = [
     {
-      company: 'Company XYZ',
-      url: 'https://companyxyz.com',
-      title: 'Senior Frontend Developer',
-      range: 'January 2023 - Present',
-      responsibilities: [
-        'Developed and maintained core features for the company\'s flagship product using React, TypeScript, and GraphQL',
-        'Led a team of 3 developers to implement a new design system that improved development efficiency by 40%',
-        'Collaborated with designers and product managers to create intuitive user experiences',
-        'Optimized web performance resulting in a 30% improvement in load times',
-        'Mentored junior developers through code reviews and pair programming sessions'
-      ]
-    },
-    {
-      company: 'Studio ABC',
-      url: 'https://studioabc.com',
-      title: 'Web Developer',
-      range: 'June 2020 - December 2022',
-      responsibilities: [
-        'Built responsive websites and web applications for various clients using modern JavaScript frameworks',
-        'Optimized website performance, improving load times by up to 60%',
-        'Implemented SEO best practices, resulting in a 45% increase in organic traffic',
-        'Collaborated with a cross-functional team of designers, project managers, and other developers',
-        'Migrated legacy applications to modern tech stacks, improving maintainability and performance'
-      ]
-    },
-    {
-      company: 'Digital Agency',
-      url: 'https://digitalagency.com',
+      company: 'Metalogic Infomitra',
+      url: 'https://metalogicinfo.com/',
       title: 'Frontend Developer',
-      range: 'August 2018 - May 2020',
+      range: 'Nov 2024 - Jan 2025',
       responsibilities: [
-        'Developed responsive, cross-browser compatible websites from design mockups',
-        'Created interactive UI components and animations using JavaScript and CSS',
-        'Worked closely with UX/UI designers to implement pixel-perfect layouts',
-        'Utilized version control and CI/CD pipelines for efficient code management',
-        'Participated in client meetings and translated business requirements into technical solutions'
+        'Rebuilt the frontend of a local Indonesian bank\'s web application, transitioning from HTML+CSS injection to a Vue.js-based architecture for improved maintainability and scalability',
+        'Redesigned the UI to be fully responsive, implementing mobile friendly design principles using Vue.js and modern CSS frameworks, ensuring smooth user experience across devices',
+        'Refactored legacy code into modular Vue components, improving code reusability and reducing duplication by 50%',
+        'Collaborated with backend teams, ensuring smooth API integration and secure data handling within Vue.js components',
+        'Optimized UI performance, reducing load times through lazy loading, computed properties, and efficient reactivity handling',
+        'Implemented Vue Router and Vuex, enhancing navigation and state management while eliminating reliance on outdated inline scripts'
       ]
     },
     {
-      company: 'Tech Startup',
-      url: 'https://techstartup.com',
-      title: 'Junior Web Developer',
-      range: 'January 2017 - July 2018',
+      company: 'Simian Technologies',
+      url: 'https://www.simian.co.id/',
+      title: 'Data Management Developer',
+      range: 'Aug 2024 - Oct 2024',
       responsibilities: [
-        'Assisted in developing and maintaining client websites using HTML, CSS, and JavaScript',
-        'Implemented responsive design approaches and tested across various browsers and devices',
-        'Collaborated with the design team to create visually appealing web interfaces',
-        'Participated in code reviews to ensure code quality and best practices',
-        'Built and integrated third-party APIs for enhanced website functionality'
+        'Developed a Java feature to handle user requests from the PHP frontend generating downloadable PDFs with customer-specific data',
+        'Executed PostgreSQL queries to retrieve, transform, and organize user-specific data, ensuring accuracy and customization in document generation',
+        'Designed and implemented Data Transfer Objects (DTOs) to facilitate smooth data flow between the backend and the HTML-toPDF generation process',
+        'Automated HTML-to-PDF generation using Playwright, leveraging database-driven data for dynamic HTML population, reducing manual reporting effort by 30%',
+        'Utilized Docker containerization for feature development, ensuring a consistent and reproducible environment across teams',
+        'Utilized Maven for project build automation and dependency management, ensuring efficient integration of backend features with the PHP frontend'
+      ]
+    },
+    {
+      company: 'Unindo Niaga Pratama',
+      url: 'https://g.co/kgs/MpHqZQc',
+      title: 'Software Developer',
+      range: 'May 2024 - Jul 2024',
+      responsibilities: [
+        ' Developed a Python-based automation tool to generate and compile barcoded vouchers into PDFs, processing approximately 200,000 vouchers for major clients such as Ace Hardware, Pepper Lunch, Chatime, Toys Kingdom, and Starbucks',
+        'Utilized Pandas to read and process data from Excel spreadsheets dynamically',
+        'Optimized manual voucher processing by 80%, reducing human effort and error',
+        'Developed custom indexing logic tailored to customer requirements for distributing different voucher categories',
       ]
     }
   ];
+
+  // Reset tabs when the data changes
+  useEffect(() => {
+    tabs.current = tabs.current.slice(0, experienceData.length);
+    
+    // Make sure activeTabId is valid
+    if (activeTabId >= experienceData.length) {
+      setActiveTabId(0);
+    }
+    
+    // Reset tabFocus if it's no longer valid
+    if (tabFocus !== null && tabFocus >= experienceData.length) {
+      setTabFocus(null);
+    }
+  }, [experienceData.length, activeTabId, tabFocus]);
 
   // Focus handling for keyboard navigation
   useEffect(() => {
@@ -68,21 +71,21 @@ const Experience = () => {
       if (tabFocus !== null) {
         if (e.key === 'ArrowUp') {
           e.preventDefault();
-          setTabFocus(tabFocus === 0 ? tabs.current.length - 1 : tabFocus - 1);
+          setTabFocus(tabFocus === 0 ? experienceData.length - 1 : tabFocus - 1);
         } else if (e.key === 'ArrowDown') {
           e.preventDefault();
-          setTabFocus(tabFocus === tabs.current.length - 1 ? 0 : tabFocus + 1);
+          setTabFocus(tabFocus === experienceData.length - 1 ? 0 : tabFocus + 1);
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [tabFocus]);
+  }, [tabFocus, experienceData.length]);
 
   // Effect for changing tab focus
   useEffect(() => {
-    if (tabFocus !== null) {
+    if (tabFocus !== null && tabs.current[tabFocus]) {
       tabs.current[tabFocus].focus();
     }
   }, [tabFocus]);
@@ -95,8 +98,9 @@ const Experience = () => {
 
   return (
     <Section id="experience" number="02" title="Where I've Worked">
-      <div className="min-h-[340px] flex flex-col md:flex-row">
-        <div className="relative flex overflow-x-auto mb-8 md:mb-0 md:block md:w-max">
+      <div className="min-h-[340px] flex flex-col md:flex-row overflow-visible">
+        <div className="relative flex md:block md:w-max">
+          {/* Removed the overflow-x-auto class */}
           <div className="flex md:flex-col w-max border-b md:border-b-0 md:border-l border-[var(--lightest-navy)]">
             {experienceData.map((item, i) => (
               <button
@@ -142,10 +146,10 @@ const Experience = () => {
               animate={{ opacity: activeTabId === i ? 1 : 0, y: activeTabId === i ? 0 : 20 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-xl font-medium text-[var(--lightest-slate)]">
-                {item.title}{' '}
+              <h3 className="text-xl font-medium text-[var(--lightest-slate)] inline-flex flex-wrap">
+                <span>{item.title}</span>{' '}
                 <span className="text-[var(--green)]">
-                  @ <a href={item.url} className="inline-link" target="_blank" rel="noopener noreferrer">
+                  &nbsp;@&nbsp; <a href={item.url} className="inline-link" target="_blank" rel="noopener noreferrer">
                     {item.company}
                   </a>
                 </span>
@@ -158,7 +162,7 @@ const Experience = () => {
               <ul className="space-y-2.5">
                 {item.responsibilities.map((responsibility, j) => (
                   <li key={j} className="flex">
-                    <div className="text-[var(--green)] mr-2 pt-1">▹</div>
+                    <div className="text-[var(--green)] mr-2 pt-1 flex-shrink-0">▹</div>
                     <div>{responsibility}</div>
                   </li>
                 ))}
