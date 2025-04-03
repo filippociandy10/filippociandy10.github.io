@@ -7,7 +7,7 @@ const projects = [
       tags: ['Next.js', 'React', 'Framer Motion', 'Tailwind CSS'],
       image: './images/website.png',
       github: 'https://github.com/filippociandy10/portfolioweb',
-      external: 'https://yourwebsite.com',
+      external: 'https://filippociandy10.github.io/',
       featured: true,
     },
     {
