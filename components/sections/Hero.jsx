@@ -84,7 +84,7 @@ const Hero = () => {
           
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl" style={{ width: '280px', height: '330px' }}>
             <Image
-              src="/images/portrait_fil.png"
+              src="./images/portrait_fil.png"
               alt="Filippo Ciandy"
               fill
               className="object-cover"
