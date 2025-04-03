@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Head>
-        <title>Your Name | Developer</title>
+        <title>Filippo Ciandy</title>
         <meta name="description" content="Personal portfolio website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div style={{ color: 'var(--green)', fontSize: '32px', fontFamily: 'var(--font-mono)' }}>YN</div>
+            <div style={{ color: 'var(--green)', fontSize: '32px', fontFamily: 'var(--font-mono)' }}>FC</div>
           </motion.div>
         </motion.div>
       ) : (

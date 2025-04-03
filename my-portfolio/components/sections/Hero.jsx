@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Section from '../ui/Section';
-
 const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,15 +49,14 @@ const Hero = () => {
             className="text-3xl md:text-4xl font-medium text-[var(--gray)] mb-6"
             variants={itemVariants}
           >
-          Passionate about crafting scalable & efficient solutions
+            Passionate about crafting scalable & efficient solutions
           </motion.h2>
           
           <motion.p 
             className="text-lg text-[var(--gray)] mb-8 max-w-lg"
             variants={itemVariants}
           >
-            I'm a full-stack software developer specializing in building fast, scalable, and user-friendly application
-
+            I'm a full-stack software developer specializing in building fast, scalable, and user-friendly applications.
           </motion.p>
           
           <motion.div
@@ -76,27 +74,30 @@ const Hero = () => {
 
         {/* Right Column: Hero Image with Decorative Elements */}
         <motion.div 
-          className="relative"
+          className="relative mx-auto"
+          style={{ width: '300px', height: '350px' }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/profile.jpg"
-              alt="Filippo Ciandy"
-              width={500}
-              height={500}
-              className="w-full h-auto object-cover"
-            />
-          </div>
-          
-          {/* Decorative Elements */}
-          <div className="absolute -top-10 -right-10 w-60 h-60 bg-gradient-to-br from-[var(--primary-light)] to-[var(--secondary)] rounded-full opacity-20 blur-xl z-0"></div>
-          <div className="absolute -bottom-5 -left-5 w-40 h-40 bg-[var(--secondary)] rounded-full opacity-20 blur-xl z-0"></div>
+          {/* Decorative Elements - Must be before the image to be behind it */}
+          <div className="absolute -top-6 -right-6 w-40 h-40 bg-gradient-to-br from-[var(--primary-light)] to-[var(--secondary)] rounded-full opacity-20 blur-xl"></div>
+          <div className="absolute -bottom-4 -left-4 w-28 h-28 bg-[var(--secondary)] rounded-full opacity-20 blur-xl"></div>
           
           {/* Decorative Border */}
-          <div className="absolute top-8 -right-8 w-full h-full border-4 border-[var(--primary)] rounded-2xl z-0"></div>
+          <div className="absolute top-5 -right-5 w-full h-full border-2 border-[var(--primary)] rounded-2xl"></div>
+          
+          {/* Main Image - Must come after decorative elements to be on top */}
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl" style={{ width: '280px', height: '330px' }}>
+            <Image
+              src="/images/portrait_fil.png"
+              alt="Filippo Ciandy"
+              fill
+              className="object-cover"
+              sizes="280px"
+              priority
+            />
+          </div>
         </motion.div>
       </div>
     </Section>

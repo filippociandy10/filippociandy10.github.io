@@ -7,27 +7,17 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: <FiGithub />,
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/filippociandy10',
     },
     {
       name: 'LinkedIn',
       icon: <FiLinkedin />,
-      url: 'https://linkedin.com/in/yourusername',
-    },
-    {
-      name: 'Twitter',
-      icon: <FiTwitter />,
-      url: 'https://twitter.com/yourusername',
-    },
-    {
-      name: 'CodePen',
-      icon: <FiCodepen />,
-      url: 'https://codepen.io/yourusername',
+      url: 'https://www.linkedin.com/in/filippociandy/',
     },
     {
       name: 'Instagram',
       icon: <FiInstagram />,
-      url: 'https://instagram.com/yourusername',
+      url: 'https://instagram.com/filippociandy',
     },
   ];
 
@@ -69,29 +59,6 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        
-        {/* Credit Line */}
-        <motion.p 
-          className="mt-6 font-mono text-sm text-[var(--light-slate)]"
-          variants={fadeUpVariants}
-        >
-          <a 
-            href="https://github.com/yourusername/portfolio" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[var(--green)]"
-          >
-            Designed & Built by Your Name
-          </a>
-        </motion.p>
-        
-        {/* Copyright */}
-        <motion.p 
-          className="mt-2 font-mono text-xs text-[var(--light-slate)]"
-          variants={fadeUpVariants}
-        >
-          © {new Date().getFullYear()} All Rights Reserved
-        </motion.p>
       </div>
     </motion.footer>
   );

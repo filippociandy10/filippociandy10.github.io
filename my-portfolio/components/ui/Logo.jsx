@@ -26,7 +26,6 @@ const Logo = () => {
               stroke="currentColor"
               strokeWidth="2"
             />
-            {/* Replace YN with your own initials or personalized logo */}
             <text
               x="50%"
               y="50%"

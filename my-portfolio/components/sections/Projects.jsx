@@ -10,7 +10,7 @@ const Projects = () => {
   const otherProjects = projectsData.filter(project => !project.featured);
 
   return (
-    <Section id="projects" title="My Projects" number="02">
+    <Section id="projects" title="My Projects" number="03">
       {/* Featured Projects - Large Cards */}
       <div className="mb-20">
         {featuredProjects.map((project, i) => (
@@ -22,24 +22,35 @@ const Projects = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            {/* Project Image */}
+            {/* Project Image - Conditional Link */}
             <div className={`md:col-span-7 ${i % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
-                {/* Project Image Link */}
-                <a 
-                  href={project.external} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={800}
-                    height={450}
-                    className="w-full h-auto transition-transform duration-700 hover:scale-105"
-                  />
-                </a>
+                {project.external ? (
+                  <a 
+                    href={project.external} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={800}
+                      height={450}
+                      className="w-full h-auto transition-transform duration-700 hover:scale-105"
+                    />
+                  </a>
+                ) : (
+                  <div className="block">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={800}
+                      height={450}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                )}
               </div>
             </div>
             
@@ -48,15 +59,20 @@ const Projects = () => {
               <div className={`flex flex-col ${i % 2 === 0 ? '' : 'md:items-end md:text-right'}`}>
                 <p className="font-mono text-[var(--primary)] mb-1">Featured Project</p>
                 
+                {/* Project Title - Conditional Link */}
                 <h3 className="text-2xl font-bold mb-4">
-                  <a 
-                    href={project.external} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-[var(--dark)] hover:text-[var(--primary)] transition-colors"
-                  >
-                    {project.title}
-                  </a>
+                  {(project.external || project.github) ? (
+                    <a 
+                      href={project.external || project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[var(--dark)] hover:text-[var(--primary)] transition-colors"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    <span className="text-[var(--dark)]">{project.title}</span>
+                  )}
                 </h3>
                 
                 <div className="p-5 bg-[var(--light-gray)]/50 rounded-lg shadow-sm backdrop-blur-sm mb-4">
@@ -72,7 +88,7 @@ const Projects = () => {
                   ))}
                 </ul>
                 
-                {/* Links */}
+                {/* Links - Only show if links exist */}
                 <div className={`flex gap-4 ${i % 2 === 0 ? '' : 'md:justify-end'}`}>
                   {project.github && (
                     <a 
@@ -166,15 +182,20 @@ const Projects = () => {
                     </div>
                   </div>
                   
+                  {/* Project Title - Conditional Link */}
                   <h3 className="text-xl font-bold mb-2">
-                    <a 
-                      href={project.external || project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[var(--dark)] hover:text-[var(--primary)] transition-colors"
-                    >
-                      {project.title}
-                    </a>
+                    {(project.external || project.github) ? (
+                      <a 
+                        href={project.external || project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[var(--dark)] hover:text-[var(--primary)] transition-colors"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      <span className="text-[var(--dark)]">{project.title}</span>
+                    )}
                   </h3>
                   
                   <p className="text-[var(--gray)] mb-6">

@@ -9,24 +9,22 @@ const Experience = () => {
   
   const experienceData = [
     {
-      company: 'Metalogic Infomitra',
-      url: 'https://metalogicinfo.com/',
-      title: 'Frontend Developer',
-      range: 'Nov 2024 - Jan 2025',
+      company: 'Unindo Niaga Pratama',
+      url: 'https://g.co/kgs/MpHqZQc',
+      title: 'Software Developer',
+      range: 'Dec 2024 - Feb 2025',
       responsibilities: [
-        'Rebuilt the frontend of a local Indonesian bank\'s web application, transitioning from HTML+CSS injection to a Vue.js-based architecture for improved maintainability and scalability',
-        'Redesigned the UI to be fully responsive, implementing mobile friendly design principles using Vue.js and modern CSS frameworks, ensuring smooth user experience across devices',
-        'Refactored legacy code into modular Vue components, improving code reusability and reducing duplication by 50%',
-        'Collaborated with backend teams, ensuring smooth API integration and secure data handling within Vue.js components',
-        'Optimized UI performance, reducing load times through lazy loading, computed properties, and efficient reactivity handling',
-        'Implemented Vue Router and Vuex, enhancing navigation and state management while eliminating reliance on outdated inline scripts'
+        ' Developed a Python-based automation tool to generate and compile barcoded vouchers into PDFs, processing approximately 200,000 vouchers for major clients such as Ace Hardware, Pepper Lunch, Chatime, Toys Kingdom, and Starbucks',
+        'Utilized Pandas to read and process data from Excel spreadsheets dynamically',
+        'Optimized manual voucher processing by 80%, reducing human effort and error',
+        'Developed custom indexing logic tailored to customer requirements for distributing different voucher categories',
       ]
     },
     {
       company: 'Simian Technologies',
       url: 'https://www.simian.co.id/',
       title: 'Data Management Developer',
-      range: 'Aug 2024 - Oct 2024',
+      range: 'Aug 2024 - Nov 2024',
       responsibilities: [
         'Developed a Java feature to handle user requests from the PHP frontend generating downloadable PDFs with customer-specific data',
         'Executed PostgreSQL queries to retrieve, transform, and organize user-specific data, ensuring accuracy and customization in document generation',
@@ -37,15 +35,17 @@ const Experience = () => {
       ]
     },
     {
-      company: 'Unindo Niaga Pratama',
-      url: 'https://g.co/kgs/MpHqZQc',
-      title: 'Software Developer',
-      range: 'May 2024 - Jul 2024',
+      company: 'Metalogic Infomitra',
+      url: 'https://metalogicinfo.com/',
+      title: 'Frontend Developer',
+      range: 'Apr 2024 - Aug 2024',
       responsibilities: [
-        ' Developed a Python-based automation tool to generate and compile barcoded vouchers into PDFs, processing approximately 200,000 vouchers for major clients such as Ace Hardware, Pepper Lunch, Chatime, Toys Kingdom, and Starbucks',
-        'Utilized Pandas to read and process data from Excel spreadsheets dynamically',
-        'Optimized manual voucher processing by 80%, reducing human effort and error',
-        'Developed custom indexing logic tailored to customer requirements for distributing different voucher categories',
+        'Rebuilt the frontend of a local Indonesian bank\'s web application, transitioning from HTML+CSS injection to a Vue.js-based architecture for improved maintainability and scalability',
+        'Redesigned the UI to be fully responsive, implementing mobile friendly design principles using Vue.js and modern CSS frameworks, ensuring smooth user experience across devices',
+        'Refactored legacy code into modular Vue components, improving code reusability and reducing duplication by 50%',
+        'Collaborated with backend teams, ensuring smooth API integration and secure data handling within Vue.js components',
+        'Optimized UI performance, reducing load times through lazy loading, computed properties, and efficient reactivity handling',
+        'Implemented Vue Router and Vuex, enhancing navigation and state management while eliminating reliance on outdated inline scripts'
       ]
     }
   ];
@@ -100,7 +100,6 @@ const Experience = () => {
     <Section id="experience" number="02" title="Where I've Worked">
       <div className="min-h-[340px] flex flex-col md:flex-row overflow-visible">
         <div className="relative flex md:block md:w-max">
-          {/* Removed the overflow-x-auto class */}
           <div className="flex md:flex-col w-max border-b md:border-b-0 md:border-l border-[var(--lightest-navy)]">
             {experienceData.map((item, i) => (
               <button
@@ -126,7 +125,7 @@ const Experience = () => {
             className="hidden md:block absolute h-0.5 md:w-0.5 md:h-[var(--tab-height)] bg-[var(--green)] transition-all duration-250"
             style={{ 
               '--tab-height': '42px',
-              top: activeTabId * 42, // Adjust this value to match tab height
+              top: activeTabId * 42, 
               left: 0
             }}
           />
