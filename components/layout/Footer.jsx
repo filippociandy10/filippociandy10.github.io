@@ -41,7 +41,6 @@ const Footer = () => {
       variants={fadeUpVariants}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Social Icons */}
         <ul className="flex justify-center space-x-6 mb-6">
           {socialLinks.map(({ name, icon, url }) => (
             <li key={name}>

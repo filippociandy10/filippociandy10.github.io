@@ -66,7 +66,7 @@ const About = () => {
             <div className="relative z-10 overflow-hidden rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] p-1">
               <div className="bg-[var(--light)] rounded-md overflow-hidden">
                 <Image
-                  src="/images/portrait_fil.png"
+                  src="./images/portrait_fil.png"
                   alt="Your profile"
                   width={600}
                   height={600}

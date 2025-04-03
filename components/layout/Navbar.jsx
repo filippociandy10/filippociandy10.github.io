@@ -29,7 +29,6 @@ const Navbar = () => {
     }`}>
       <nav className="px-8 py-6">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          {/* Logo */}
           <Link href="/">
             <div className="text-[var(--primary)] font-medium font-mono flex items-center">
               <span className="text-xl">FC</span>
@@ -37,7 +36,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Nav Items */}
           <div className="navbar-container">
             {navLinks.map(({ name, url }, i) => (
               <Link 
