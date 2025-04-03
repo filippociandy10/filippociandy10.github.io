@@ -25,7 +25,6 @@ const Hero = () => {
   return (
     <Section id="hero" fullHeight={true}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Column: Text Content */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -72,7 +71,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Hero Image with Decorative Elements */}
         <motion.div 
           className="relative mx-auto"
           style={{ width: '300px', height: '350px' }}
@@ -80,14 +78,10 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          {/* Decorative Elements - Must be before the image to be behind it */}
           <div className="absolute -top-6 -right-6 w-40 h-40 bg-gradient-to-br from-[var(--primary-light)] to-[var(--secondary)] rounded-full opacity-20 blur-xl"></div>
           <div className="absolute -bottom-4 -left-4 w-28 h-28 bg-[var(--secondary)] rounded-full opacity-20 blur-xl"></div>
-          
-          {/* Decorative Border */}
           <div className="absolute top-5 -right-5 w-full h-full border-2 border-[var(--primary)] rounded-2xl"></div>
           
-          {/* Main Image - Must come after decorative elements to be on top */}
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl" style={{ width: '280px', height: '330px' }}>
             <Image
               src="/images/portrait_fil.png"

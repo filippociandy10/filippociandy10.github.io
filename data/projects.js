@@ -5,7 +5,7 @@ const projects = [
       description:
         'A modern, responsive portfolio website built with Next.js and Framer Motion to showcase my projects and skills. Features smooth animations, a dark theme, and responsive design.',
       tags: ['Next.js', 'React', 'Framer Motion', 'Tailwind CSS'],
-      image: '/images/website.png',
+      image: './images/website.png',
       github: 'https://github.com/filippociandy10/portfolioweb',
       external: 'https://yourwebsite.com',
       featured: true,
@@ -16,7 +16,7 @@ const projects = [
       description:
         'A decentralized social networking platform built with Django that enables users to share posts, follow friends, and interact across multiple independent servers.',
       tags: ['Javascript','HTML','Heroku','Django', 'Python'],
-      image: '/images/cmput404thumbnail.png',
+      image: './images/cmput404thumbnail.png',
       github: 'https://github.com/CMPUT404-W23/project',
       external: 'https://www.youtube.com/watch?v=x7M50f6BFw4&ab_channel=AlexMak',
       featured: true,
@@ -27,7 +27,7 @@ const projects = [
       description:
         'An application that connects young people and students to local opportunities like training, apprenticeships, jobs, and scholarships.',
       tags: ['React', 'Yarn', 'Cypress', 'Docker', 'Make'],
-      image: '/images/401.png',
+      image: './images/401.png',
       github: 'https://github.com/UAlberta-CMPUT401/pathfinder-2',
       external: 'https://www.youtube.com/watch?v=8e2EL78Grx0&ab_channel=IrisDu',
       featured: true,
@@ -37,7 +37,7 @@ const projects = [
       title: 'ISA Application (Project Manager)',
       description: 'A digital wallet for international students to unlock exclusive discounts and benefits with participating vendors.',
       tags: ['React Native','Javascript','IOS', 'Android'],
-      image: '/images/isa.png',
+      image: './images/isa.png',
       github: 'https://github.com/UofA-Blueprint/ICard',
       external: 'https://isa.ualberta.ca/icard',
       featured: true,

@@ -8,7 +8,6 @@ import Footer from './Footer';
 const Layout = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate loading to show animation
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);

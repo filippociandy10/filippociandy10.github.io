@@ -22,36 +22,6 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    try {
-      console.log('Form submitted:', formState);
-      
-      // Simulate successful form submission
-      setFormStatus({
-        submitted: true,
-        success: true,
-        error: null,
-      });
-      
-      // Reset form after submission
-      setFormState({
-        name: '',
-        email: '',
-        message: '',
-      });
-      
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setFormStatus({
-        submitted: true,
-        success: false,
-        error: 'There was an error sending your message. Please try again.',
-      });
-    }
-  };
-
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { 

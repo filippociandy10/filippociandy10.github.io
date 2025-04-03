@@ -11,7 +11,6 @@ const Projects = () => {
 
   return (
     <Section id="projects" title="My Projects" number="03">
-      {/* Featured Projects - Large Cards */}
       <div className="mb-20">
         {featuredProjects.map((project, i) => (
           <motion.div 
@@ -22,7 +21,6 @@ const Projects = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            {/* Project Image - Conditional Link */}
             <div className={`md:col-span-7 ${i % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
               <div className="relative overflow-hidden rounded-lg shadow-xl">
                 {project.external ? (
@@ -54,12 +52,9 @@ const Projects = () => {
               </div>
             </div>
             
-            {/* Project Details */}
             <div className={`md:col-span-5 ${i % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
               <div className={`flex flex-col ${i % 2 === 0 ? '' : 'md:items-end md:text-right'}`}>
                 <p className="font-mono text-[var(--primary)] mb-1">Featured Project</p>
-                
-                {/* Project Title - Conditional Link */}
                 <h3 className="text-2xl font-bold mb-4">
                   {(project.external || project.github) ? (
                     <a 
@@ -79,7 +74,6 @@ const Projects = () => {
                   <p>{project.description}</p>
                 </div>
                 
-                {/* Tech Stack */}
                 <ul className={`flex flex-wrap gap-3 mb-6 ${i % 2 === 0 ? '' : 'md:justify-end'}`}>
                   {project.tags.map((tag, j) => (
                     <li key={j} className="font-mono text-xs px-3 py-1 rounded-full bg-[var(--secondary)]/10 text-[var(--primary)]">
@@ -88,7 +82,6 @@ const Projects = () => {
                   ))}
                 </ul>
                 
-                {/* Links - Only show if links exist */}
                 <div className={`flex gap-4 ${i % 2 === 0 ? '' : 'md:justify-end'}`}>
                   {project.github && (
                     <a 
@@ -126,7 +119,6 @@ const Projects = () => {
         ))}
       </div>
       
-      {/* Other Projects - Grid of Cards */}
       {otherProjects.length > 0 && (
         <div>
           <h3 className="text-2xl font-bold mb-8 text-center">Other Noteworthy Projects</h3>
@@ -182,7 +174,6 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  {/* Project Title - Conditional Link */}
                   <h3 className="text-xl font-bold mb-2">
                     {(project.external || project.github) ? (
                       <a 

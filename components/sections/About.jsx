@@ -19,7 +19,6 @@ const About = () => {
   return (
     <Section id="about" title="About Me" number="01">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Text Content */}
         <motion.div 
           className="lg:col-span-7"
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +55,6 @@ const About = () => {
           </div>
         </motion.div>
         
-        {/* Image */}
         <motion.div 
           className="lg:col-span-5 relative"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -65,7 +63,6 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="relative mx-auto max-w-xs">
-            {/* Image Frame */}
             <div className="relative z-10 overflow-hidden rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] p-1">
               <div className="bg-[var(--light)] rounded-md overflow-hidden">
                 <Image
@@ -77,7 +74,6 @@ const About = () => {
               </div>
             </div>
             
-            {/* Decorative Elements */}
             <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[var(--secondary)] rounded-lg z-0"></div>
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[var(--primary)] rounded-lg z-0"></div>
           </div>
