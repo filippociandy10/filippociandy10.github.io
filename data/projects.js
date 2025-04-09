@@ -23,10 +23,10 @@ const projects = [
     },
     {
       id: 'featured-3',
-      title: 'Pathfinder',
+      title: 'Skillcity Institute',
       description:
         'An application that connects young people and students to local opportunities like training, apprenticeships, jobs, and scholarships.',
-      tags: ['React', 'Yarn', 'Cypress', 'Docker', 'Make'],
+      tags: ['React','Django','Next.js', 'Cypress', 'Docker'],
       image: './images/401.png',
       github: 'https://github.com/UAlberta-CMPUT401/pathfinder-2',
       external: 'https://www.youtube.com/watch?v=8e2EL78Grx0&ab_channel=IrisDu',
@@ -64,7 +64,6 @@ const projects = [
       description: 'An innovative web application that combines the popular gacha game mechanic with charitable giving.',
       tags: ['Javascript','GraphQL','HTML','CSS'],
       github: 'https://github.com/dimassudjito/gacha4good',
-      external: 'https://crypto.yourwebsite.com',
       featured: false,
     },
   ];

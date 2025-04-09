@@ -19,6 +19,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About', url: '/#about' },
+    { name: 'Work', url: '/#experience' },
+    { name: 'Pro Bono', url: '/#volunteer' },
     { name: 'Projects', url: '/#projects' },
     { name: 'Contact', url: '/#contact' },
   ];

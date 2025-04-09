@@ -4,6 +4,7 @@ import About from '../components/sections/About';
 import Experience from '../components/sections/Experience';
 import Projects from '../components/sections/Projects';
 import Contact from '../components/sections/Contact';
+import Volunteer from '../components/sections/Volunteer';
 
 export default function Home() {
   const fadeUp = {
@@ -39,7 +40,11 @@ export default function Home() {
         <motion.section id="experience" variants={fadeUp}>
           <Experience />
         </motion.section>
-        
+
+        <motion.section id="volunteer" variants={fadeUp}>
+          <Volunteer />
+        </motion.section>
+
         <motion.section id="projects" variants={fadeUp}>
           <Projects />
         </motion.section>

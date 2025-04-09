@@ -10,7 +10,7 @@ const Projects = () => {
   const otherProjects = projectsData.filter(project => !project.featured);
 
   return (
-    <Section id="projects" title="My Projects" number="03">
+    <Section id="projects" title="My Projects" number="04">
       <div className="mb-20">
         {featuredProjects.map((project, i) => (
           <motion.div 

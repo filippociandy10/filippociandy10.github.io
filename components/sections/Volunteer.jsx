@@ -2,66 +2,53 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Section from '../ui/Section'
 
-const Experience = () => {
+const Volunteer = () => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
   
-  const experienceData = [
+  const volunteerData = [
     {
-      company: 'Unindo Niaga Pratama',
-      url: 'https://g.co/kgs/MpHqZQc',
-      title: 'Software Developer',
-      range: 'Dec 2024 - Feb 2025',
+      organization: 'Blueprint Chapter UAlberta',
+      url: 'https://www.linkedin.com/company/uofa-blueprint/',
+      title: 'Project Manager',
+      range: 'May 2022 - May 2023',
       responsibilities: [
-        ' Developed a Python-based automation tool to generate and compile barcoded vouchers into PDFs, processing approximately 200,000 vouchers for major clients such as Ace Hardware, Pepper Lunch, Chatime, Toys Kingdom, and Starbucks',
-        'Utilized Pandas to read and process data from Excel spreadsheets dynamically',
-        'Optimized manual voucher processing by 80%, reducing human effort and error',
-        'Developed custom indexing logic tailored to customer requirements for distributing different voucher categories',
+        'Led a cross-functional team of developers and designers to deliver a full-stack native application for a nonprofit organization.',
+        'Facilitated Agile ceremonies including sprint planning, standups, retrospectives, and stakeholder demos.',
+        'Coordinated project timelines, task allocation, and team collaboration using GitHub Projects.',
+        'Maintained consistent communication with the client to gather requirements, manage expectations, and deliver milestones.',
+        'Ensured code quality and timely delivery through peer reviews, QA testing, and continuous integration practices.'
       ]
     },
     {
-      company: 'Simian Technologies',
-      url: 'https://www.simian.co.id/',
-      title: 'Data Management Developer',
-      range: 'Aug 2024 - Nov 2024',
-      responsibilities: [
-        'Developed backend features in Java using Spring Boot, handling requests from a PHP frontend to generate downloadable, customer-specific PDF documents.',
-        'Executed PostgreSQL queries to customize user data retrieval, improving the accuracy of generated reports.',
-        'Created DTOs and service classes to ensure clean architecture and reliable data flow for document rendering.',
-        'Automated HTML-to-PDF generation using Playwright, cutting manual workload by 30%.',
-        'Utilized Docker for environment consistency and Maven for efficient build and dependency management.',
-        'Participated in code reviews and documentation to support maintainable and secure code.'
-      ]
-    },
-    {
-      company: 'Metalogic Infomitra',
-      url: 'https://metalogicinfo.com/',
-      title: 'Frontend Developer',
-      range: 'Apr 2024 - Aug 2024',
-      responsibilities: [
-        'Rebuilt the corporate banking web application using Vue, transforming a legacy system into a scalable SPA.',
-        'Implemented mobile-first designs and responsive components using Tailwind CSS and Vue Router.',
-        'Refactored legacy code into reusable modules, enhancing maintainability and reducing duplication.',
-        'Collaborated with backend teams on API integration and secured data access.'
-      ]
+        organization: 'Skillcity Institute',
+        url: 'https://skillcity.ca/',
+        title: 'Fullstack Developer',
+        range: 'Jan 2023 - Apr 2023',
+        responsibilities: [
+            'Developed user-facing features with Next.js and built REST APIs with Django for a student opportunity platform.',
+            'Containerized the application using Docker to streamline development, testing, and deployment across environments.',
+            'Wrote and maintained unit and E2E tests using Jest and Cypress, improving app stability.',
+            'Implemented end-to-end tests using Cypress to validate user flows and ensure application reliability.'
+        ]
     }
   ];
 
   // Reset tabs when the data changes
   useEffect(() => {
-    tabs.current = tabs.current.slice(0, experienceData.length);
+    tabs.current = tabs.current.slice(0, volunteerData.length);
     
     // Make sure activeTabId is valid
-    if (activeTabId >= experienceData.length) {
+    if (activeTabId >= volunteerData.length) {
       setActiveTabId(0);
     }
     
     // Reset tabFocus if it's no longer valid
-    if (tabFocus !== null && tabFocus >= experienceData.length) {
+    if (tabFocus !== null && tabFocus >= volunteerData.length) {
       setTabFocus(null);
     }
-  }, [experienceData.length, activeTabId, tabFocus]);
+  }, [volunteerData.length, activeTabId, tabFocus]);
 
   // Focus handling for keyboard navigation
   useEffect(() => {
@@ -69,17 +56,17 @@ const Experience = () => {
       if (tabFocus !== null) {
         if (e.key === 'ArrowUp') {
           e.preventDefault();
-          setTabFocus(tabFocus === 0 ? experienceData.length - 1 : tabFocus - 1);
+          setTabFocus(tabFocus === 0 ? volunteerData.length - 1 : tabFocus - 1);
         } else if (e.key === 'ArrowDown') {
           e.preventDefault();
-          setTabFocus(tabFocus === experienceData.length - 1 ? 0 : tabFocus + 1);
+          setTabFocus(tabFocus === volunteerData.length - 1 ? 0 : tabFocus + 1);
         }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [tabFocus, experienceData.length]);
+  }, [tabFocus, volunteerData.length]);
 
   // Effect for changing tab focus
   useEffect(() => {
@@ -95,11 +82,11 @@ const Experience = () => {
   };
 
   return (
-    <Section id="experience" number="02" title="Where I've Worked">
+    <Section id="volunteer" number="03" title="Pro Bono Projects">
       <div className="min-h-[340px] flex flex-col md:flex-row overflow-visible">
         <div className="relative flex md:block md:w-max">
           <div className="flex md:flex-col w-max border-b md:border-b-0 md:border-l border-[var(--lightest-navy)]">
-            {experienceData.map((item, i) => (
+            {volunteerData.map((item, i) => (
               <button
                 key={i}
                 className={`min-w-[140px] px-5 py-3 text-left font-mono text-sm whitespace-nowrap transition-all outline-none focus:bg-[var(--light-navy)] ${
@@ -115,7 +102,7 @@ const Experience = () => {
                 aria-selected={activeTabId === i}
                 aria-controls={`panel-${i}`}
               >
-                {item.company}
+                {item.organization}
               </button>
             ))}
           </div>
@@ -130,7 +117,7 @@ const Experience = () => {
         </div>
 
         <div className="md:ml-10 w-full">
-          {experienceData.map((item, i) => (
+          {volunteerData.map((item, i) => (
             <motion.div
               key={i}
               id={`panel-${i}`}
@@ -147,7 +134,7 @@ const Experience = () => {
                 <span>{item.title}</span>{' '}
                 <span className="text-[var(--green)]">
                   &nbsp;@&nbsp; <a href={item.url} className="inline-link" target="_blank" rel="noopener noreferrer">
-                    {item.company}
+                    {item.organization}
                   </a>
                 </span>
               </h3>
@@ -172,4 +159,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Volunteer;
