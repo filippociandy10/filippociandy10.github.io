@@ -11,7 +11,7 @@ const Experience = () => {
     {
       company: 'Unindo Niaga Pratama',
       url: 'https://g.co/kgs/MpHqZQc',
-      title: 'Software Developer',
+      title: 'Software Developer Intern',
       range: 'Dec 2024 - Feb 2025',
       responsibilities: [
         ' Developed a Python-based automation tool to generate and compile barcoded vouchers into PDFs, processing approximately 200,000 vouchers for major clients such as Ace Hardware, Pepper Lunch, Chatime, Toys Kingdom, and Starbucks',
@@ -23,7 +23,7 @@ const Experience = () => {
     {
       company: 'Simian Technologies',
       url: 'https://www.simian.co.id/',
-      title: 'Data Management Developer',
+      title: 'Data Management Developer Intern',
       range: 'Aug 2024 - Nov 2024',
       responsibilities: [
         'Developed backend features in Java using Spring Boot, handling requests from a PHP frontend to generate downloadable, customer-specific PDF documents.',
@@ -37,7 +37,7 @@ const Experience = () => {
     {
       company: 'Metalogic Infomitra',
       url: 'https://metalogicinfo.com/',
-      title: 'Frontend Developer',
+      title: 'Frontend Developer Intern',
       range: 'Apr 2024 - Aug 2024',
       responsibilities: [
         'Rebuilt the corporate banking web application using Vue, transforming a legacy system into a scalable SPA.',
